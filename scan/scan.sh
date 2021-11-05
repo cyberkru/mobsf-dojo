@@ -14,5 +14,6 @@ scan=`curl -X POST --url "${MOBSF_URL}api/v1/scan" --data "scan_type=$SCAN_TYPE&
 json=`curl -X POST --url "${MOBSF_URL}api/v1/report_json" --data "hash=$HASH" -H "Authorization:12345" > output/report.json`
 pdf=`curl -X POST --url "${MOBSF_URL}api/v1/download_pdf" --data "hash=$HASH" -H "Authorization:12345" > output/report.pdf`
 
-
+PRODID=$(curl -s -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Token ${DOJOKEY}" --url "http://{$DOJOIP}/api/v2/products/?limit=1000" | jq -c '[.results[] | select(.name | contains('\"${PRODNAME}\"'))][0] | .id')
+EGID=$(curl -s -H "Accept: application/json" -H "Content-Type: application/json" -H "Authorization: Token $DOJOKEY" --url "http://${DOJOIP}/api/v2/engagements/?limit=1000" | jq -c "[.results[] | select(.product == ${PRODID})][0] | .id")
 curl -X POST --header "Content-Type:multipart/form-data" --header "Authorization:Token $DOJOKEY" -F "engagement=${EGID}" -F "scan_type=MobSF Scan" -F 'file=@./output/report.json' --url "http://${DOJOIP}/api/v2/import-scan/"
