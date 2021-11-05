@@ -16,7 +16,7 @@ services:
    - TARGET_PATH=${TARGET_PATH}
    - DOJOKEY=${DOJOKEY}
    - DOJOIP=${DOJOIP}
-   - EGID=${EGID}
+   - PRODNAME=${PRODNAME}
   volumes:
    - "$PWD/output:/app/output"
    - "$PWD/target:/app/target"
