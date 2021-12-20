@@ -5,6 +5,8 @@ echo "Url mobsf: $MOBSF_URL"
 echo "DojoIP: $DOJOIP"
 echo "TagetPath: $TARGET_PATH"
 
+sleep 5
+
 response=`curl -F "file=@$TARGET_PATH" "${MOBSF_URL}api/v1/upload" -H "Authorization:12345"`
 SCAN_TYPE=`echo $response | jq '.scan_type' | sed 's/"//g'`
 FILE_NAME=`echo $response | jq '.file_name' | sed 's/"//g'`
