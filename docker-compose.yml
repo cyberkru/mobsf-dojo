@@ -18,7 +18,7 @@ services:
    - DOJOIP=${DOJOIP}
    - PRODNAME=${PRODNAME}
   volumes:
-   - "$PWD/output:/app/output"
-   - "$PWD/target:/app/target"
+   - "appout:/app/output"
+   - "appin:/app/target"
   depends_on:
    - mobsf
