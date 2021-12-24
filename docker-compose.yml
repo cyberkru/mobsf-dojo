@@ -17,7 +17,5 @@ services:
    - DOJOKEY=${DOJOKEY}
    - DOJOIP=${DOJOIP}
    - PRODNAME=${PRODNAME}
-  volumes:
-   - "$PWD/output:/app/output"
   depends_on:
    - mobsf
