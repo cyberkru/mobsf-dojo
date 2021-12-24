@@ -7,6 +7,6 @@ MobSF DefectDojo
 - copy apk file to scan folder
 - Running test
 ```
-TARGET_PATH='target/<target.apk>' DOJOKEY='<api_key>' DOJOIP='<ip:port>'  PRODNAME='<Product_name>' docker-compose up --build --exit-code-from scan
+TARGET_FILE='<target.apk>' DOJOKEY='<api_key>' DOJOIP='<ip:port>'  PRODNAME='<Product_name>' docker-compose up --build --exit-code-from scan
 ```
 - Check PDF and JSON report under `output` folder
