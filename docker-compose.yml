@@ -18,6 +18,8 @@ services:
    - DOJOIP=${DOJOIP}
    - PRODNAME=${PRODNAME}
   volumes:
-   - app/target:/app/target
+   - "app/target:/app/target"
   depends_on:
    - mobsf
+volumes:
+  app/target:
