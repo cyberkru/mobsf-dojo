@@ -13,11 +13,11 @@ services:
    context: ./scan
   environment:
    - MOBSF_URL=http://mobsf:8000/
-   - TARGET_PATH=${TARGET_PATH}
+   - TARGET_FILE=${TARGET_FILE}
    - DOJOKEY=${DOJOKEY}
    - DOJOIP=${DOJOIP}
    - PRODNAME=${PRODNAME}
   volumes:
-   - "$PWD/target:/app/target"
+   - "$PWD/output:/app/output"
   depends_on:
    - mobsf
