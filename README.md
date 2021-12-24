@@ -3,7 +3,8 @@ MobSF DefectDojo
 
 # Usage
 - Clone Repository
-- Create folder `target` and copy apk file
+- cd to mobsf-dojo 
+- copy apk file to scan folder
 - Running test
 ```
 TARGET_PATH='target/<target.apk>' DOJOKEY='<api_key>' DOJOIP='<ip:port>'  PRODNAME='<Product_name>' docker-compose up --build --exit-code-from scan
