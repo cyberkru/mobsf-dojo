@@ -15,7 +15,7 @@ services:
    - MOBSF_URL=http://mobsf:8000/
    - TARGET_FILE=${TARGET_FILE}
    - DOJOKEY=${DOJOKEY}
-   - DOJOIP=${DOJOIP}
+   - DOJOURL=${DOJOURL}
    - PRODNAME=${PRODNAME}
   volumes:
    - "$PWD/output:/app/output"
